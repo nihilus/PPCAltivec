@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ppcaltivec", "ppcaltivec.vcxproj", "{65178201-4067-4484-B2B8-49DD22B281A5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ppcaltivec", "ppcaltivec.vcxproj", "{74F130DA-94CF-4F36-AB4D-2A228C6020EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release64|Win32 = Release64|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Debug|Win32.ActiveCfg = Debug|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Debug|Win32.Build.0 = Debug|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Debug64|Win32.ActiveCfg = Debug64|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Debug64|Win32.Build.0 = Debug64|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Release|Win32.ActiveCfg = Release|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Release|Win32.Build.0 = Release|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Release64|Win32.ActiveCfg = Release64|Win32
-		{65178201-4067-4484-B2B8-49DD22B281A5}.Release64|Win32.Build.0 = Release64|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Debug|Win32.Build.0 = Debug|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Debug64|Win32.ActiveCfg = Debug64|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Debug64|Win32.Build.0 = Debug64|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Release|Win32.ActiveCfg = Release|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Release|Win32.Build.0 = Release|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Release64|Win32.ActiveCfg = Release64|Win32
+		{74F130DA-94CF-4F36-AB4D-2A228C6020EC}.Release64|Win32.Build.0 = Release64|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{65178201-4067-4484-B2B8-49DD22B281A5}</ProjectGuid>
-    <RootNamespace>ppcaltivec</RootNamespace>
+    <ProjectGuid>{74F130DA-94CF-4F36-AB4D-2A228C6020EC}</ProjectGuid>
+    <RootNamespace>PPC2C</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -60,16 +60,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)/../</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)/../</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">$(SolutionDir)/../</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">$(SolutionDir)/../</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">false</LinkIncremental>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
@@ -86,6 +86,16 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../include;C:\Program\WTL\Include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">.plw</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.plw</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">.plw</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.plw</TargetExt>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">../../../include;C:\Program\WTL\Include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">../../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">../../../lib/x86_win_vc_32;C:\Program\boost\boost_1_54_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">../../../include;C:\Program\WTL\Include;C:\Program\boost\boost_1_54_0;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -106,10 +116,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -118,7 +126,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;__NT__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
@@ -129,25 +137,24 @@
     <Link>
       <AdditionalDependencies>ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
-      <AdditionalLibraryDirectories>..\..\lib\vc.w32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /b /y "$(TargetDir)$(TargetFileName) " ..\..\bin\plugins\</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug64|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;__NT__;__EA64__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;__AMD64__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -159,22 +166,21 @@
     <Link>
       <AdditionalDependencies>ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).p64</OutputFile>
-      <AdditionalLibraryDirectories>..\..\lib\vc.w64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /b /y "$(TargetDir)$(TargetFileName) " ..\..\bin\plugins\</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;__NT__;__EA64__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;__AMD64__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -184,18 +190,17 @@
     <Link>
       <AdditionalDependencies>ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).p64</OutputFile>
-      <AdditionalLibraryDirectories>..\..\lib\vc.w64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/EXPORT:PLUGIN %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /b /y "$(TargetDir)$(TargetFileName) " ..\..\bin\plugins\</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
